@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Generation {% endblock title %}
+
+{% block content %}
+    Circuits List  
+    <br>
+    {% if qs %}
+        <ul>
+        {% for obj in qs  %}
+            {% if obj.minute < 10%}
+                <li> {{obj.circuit_id}} - {{obj.hour}} : 0{{obj.minute}} [{{obj.status1}},{{obj.status2}},{{obj.status3}},{{obj.status4}},{{obj.status5}},{{obj.status6}}]</li>
+            {% else %}    
+                <li> {{obj.circuit_id}} - {{obj.hour}} : {{obj.minute}} [{{obj.status1}},{{obj.status2}},{{obj.status3}},{{obj.status4}},{{obj.status5}},{{obj.status6}}]</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+        there are no circuits in DB
+    {% endif %}
+
+{% endblock content %}
