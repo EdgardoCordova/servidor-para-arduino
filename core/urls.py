@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home_view),
     path('ONsettings/', include('ONsettings.urls',namespace='ONsettings')),
-    path('api-auth/', include('rest_framework.urls'))
+   
 
 ]
 
