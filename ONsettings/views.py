@@ -11,6 +11,7 @@ def generation_view(request):
     minutos_hora = 60
     horas = 24
     num_lineas = minutos_hora * horas
+    #print(num_lineas)
     k=1
     # delete table crc_ON
     qs = crc_ON.objects.all()
@@ -27,7 +28,7 @@ def generation_view(request):
             s4 = random.randint(0,1)
             s5 = random.randint(0,1)
             s6 = random.randint(0,1)
-            print(k,"  hora: ",i," min: ",j,"[",s1,", ",s2,", ",s3,", ",s4,", ",s5,", ",s5,"]")
+            #print(k,"  hora: ",i," min: ",j,"[",s1,", ",s2,", ",s3,", ",s4,", ",s5,", ",s5,"]")
             k = k + 1
             crc_ON.objects.create(circuit_id=1001, hour=i,minute=j,status1=s1,status2=s2,status3=s3,status4=s4,status5=s5,status6=s6)
     
