@@ -9,7 +9,7 @@ import json
 
 def generation_view(request):
     minutos_hora = 60
-    horas = 2
+    horas = 24
     num_lineas = minutos_hora * horas
     k=1
     # delete table crc_ON
